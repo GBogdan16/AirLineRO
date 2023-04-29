@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Main {
     static Datebase obiect = new Datebase();
     private static Scanner scanner = new Scanner(System.in);
@@ -14,9 +16,9 @@ public class Main {
 
         long id = -1;
         User user =new User();
-//User user=null;
         while (true) {
             int choice = 0;
+            boolean exit = false;
             printLogin();
             System.out.println("enter your choice: ");
             try {
@@ -54,20 +56,21 @@ public class Main {
                     String password = sc.nextLine();
                     User u = new User(email, password);
                     obiect.createUser(u, false);
-                break;
+                    break;
                 }
+                default:choice = Integer.parseInt("invalid");
+                    break;
 
             }
             break;
         }
 
 
-        // ura sunt logat
+        //  sunt logat
 
-            while (true) {
+            while (true & id!=-1) {
 
 
-//                assert user != null;
                 boolean isAdmin = obiect.isAdmin(user);
                 if (!isAdmin) {
                     boolean exit = false;
@@ -95,7 +98,13 @@ public class Main {
                             List<Tickets> t= obiect.readTicketsOfUser(id);
                             System.out.println(t);
                         }
-                        case 4 -> exit = true;
+                        case 4 ->{Scanner sc = new Scanner(System.in);
+                            System.out.println("Choose the flightname number to delete a ticket ");
+                            String idflight = sc.nextLine();
+                            obiect.deleteTicket(Integer.valueOf(idflight),id);}
+
+                        case 5 -> exit = true;
+
                         }
 
                     } break;
@@ -173,7 +182,8 @@ public class Main {
             System.out.println("\t 1 - Show flights");
             System.out.println("\t 2 - Buy ticket");
             System.out.println("\t 3 - Show ticket");
-            System.out.println("\t 4 - to exit");
+            System.out.println("\t 4 - Delete ticket");
+            System.out.println("\t 5 - to exit");
         }
 
         public static void printInstructionAdmin () {
