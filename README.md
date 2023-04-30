@@ -12,6 +12,8 @@ Un user are urmatoarele optiuni :
 4.Stergerea unui bilet in functie de numarul zborului.
 
 
+
+
 Un admin are urmatoarele optiuni:
 
 1.Crearea unui admin
