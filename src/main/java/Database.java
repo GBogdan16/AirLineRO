@@ -4,9 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
-public class Datebase {
+public class Database {
     String createUser(User user, boolean isadmin) {
         String message = null;
         int val = 0;
