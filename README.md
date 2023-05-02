@@ -30,3 +30,5 @@ Un admin are urmatoarele optiuni:
 Pentru proiect am folosit ca limbaj de programare java 17 si pentru baza de date pgAdmin-PostgreSQL.
 Proiectul are 3 tabele : users cu coloanele email,password,isadmin ; tickets cu coloanele idflight,iduser  ; flights cu coloanele flightname,date,hour.
 
+Georgescu Bogdan Alexandru
+
